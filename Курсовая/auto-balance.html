@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Автосалон :: Баланс авто</title>
+  <link rel="stylesheet" href="dist/css/style.css">
+</head>
+<body>
+  
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="index.html"><i class="fas fa-car"></i> Автосалон</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#auto__navContent" aria-controls="auto__navContent" aria-expanded="false">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="auto__navContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html"><i class="fas fa-home"></i> Главная</a>
+          </li>
+          <li class="nav-item dropdown active">
+            <a class="nav-link dropdown-toggle" href="#" id="auto__drop1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fas fa-car-side"></i> Автомобили
+            </a>
+            <div class="dropdown-menu" aria-labelledby="auto__drop1">
+              <a class="dropdown-item active" href="auto-balance.html">Баланс <span class="sr-only">(текущая)</span></a>
+              <a class="dropdown-item" href="auto-coming.html">Приход</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="auto-suppliers.html">Поставщики</a>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="auto__drop2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fas fa-people-carry"></i> Услуги
+            </a>
+            <div class="dropdown-menu" aria-labelledby="auto__drop2">
+              <a class="dropdown-item" href="services.html">Каталог услуг</a>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="auto__drop4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fas fa-cash-register"></i> Касса
+            </a>
+            <div class="dropdown-menu" aria-labelledby="auto__drop4">
+              <a class="dropdown-item" href="cashRegister-new.html">Продажа</a>
+              <a class="dropdown-item" href="cashRegister-stat.html">Статистика</a>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-md-12 col-12">
+        <h4><i class="fas fa-book"></i> Баланс авто</h4>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-md-12 col-12">
+        <h5>Поиск</h5>
+        <form class="auto__search-form">
+          <fieldset>
+            <div class="form-row">
+              <div class="form-group col-md-6 col-12">
+                <label for="name">Наименование</label>
+                <input type="text" class="form-control" id="name" name="name">
+              </div>
+              <div class="form-group col-md-6 col-12">
+                <label for="mark">Марка</label>
+                <input type="text" class="form-control" id="mark" name="mark">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6 col-12">
+                <label for="pricemin">Цена не ниже</label>
+                <input type="text" class="form-control" id="pricemin" name="pricemin">
+              </div>
+              <div class="form-group col-md-6 col-12">
+                <label for="pricemax">Цена не выше</label>
+                <input type="text" class="form-control" id="pricemax" name="pricemax">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6 col-12">
+                <label for="mileagemin">Пробег не ниже</label>
+                <input type="text" class="form-control" id="mileagemin" name="mileagemin">
+              </div>
+              <div class="form-group col-md-6 col-12">
+                <label for="mileagemax">Пробег не выше</label>
+                <input type="text" class="form-control" id="mileagemax" name="mileagemax">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6 col-12">
+                <label for="year">Год выпуска не раньше</label>
+                <input type="text" class="form-control" id="year" name="year">
+              </div>
+              <div class="form-group col-md-6 col-12">
+                <label for="color">Цвет</label>
+                <input type="text" class="form-control" id="color" name="color">
+              </div>
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i> Поиск</button>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-md-12 col-12">
+        <div class="auto__cars-list">
+          <!-- Контейнер для списка авто -->
+          <table class="table table-bordered">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">id</th>
+                <th scope="col">Марка</th>
+                <th scope="col">Модель</th>
+                <th scope="col">Завод</th>
+                <th scope="col">Год выпуска</th>
+                <th scope="col">Пробег</th>
+                <th scope="col">Цвет</th>
+                <th scope="col">Цена</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><div class="ssc-line"></div></td>
+                <td><div class="ssc-line"></div></td>
+                <td><div class="ssc-line"></div></td>
+                <td><div class="ssc-line"></div></td>
+                <td><div class="ssc-line"></div></td>
+                <td><div class="ssc-line"></div></td>
+                <td><div class="ssc-line"></div></td>
+                <td><div class="ssc-line"></div></td>
+              </tr>
+              <tr>
+                <td><div class="ssc-line"></div></td>
+                <td><div class="ssc-line"></div></td>
+                <td><div class="ssc-line"></div></td>
+                <td><div class="ssc-line"></div></td>
+                <td><div class="ssc-line"></div></td>
+                <td><div class="ssc-line"></div></td>
+                <td><div class="ssc-line"></div></td>
+                <td><div class="ssc-line"></div></td>
+              </tr>
+              <tr>
+                <td><div class="ssc-line"></div></td>
+                <td><div class="ssc-line"></div></td>
+                <td><div class="ssc-line"></div></td>
+                <td><div class="ssc-line"></div></td>
+                <td><div class="ssc-line"></div></td>
+                <td><div class="ssc-line"></div></td>
+                <td><div class="ssc-line"></div></td>
+                <td><div class="ssc-line"></div></td>
+              </tr>
+            </tbody>
+          </table>  
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="dist/js/bundle.js"></script>
+</body>
+</html>

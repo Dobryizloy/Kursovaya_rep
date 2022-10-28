@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Автосалон :: Каталог услуг</title>
+  <link rel="stylesheet" href="dist/css/style.css">
+</head>
+<body>
+  
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="index.html"><i class="fas fa-car"></i> Автосалон</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#auto__navContent" aria-controls="auto__navContent" aria-expanded="false">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="auto__navContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html"><i class="fas fa-home"></i> Главная</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="auto__drop1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fas fa-car-side"></i> Автомобили
+            </a>
+            <div class="dropdown-menu" aria-labelledby="auto__drop1">
+              <a class="dropdown-item" href="auto-balance.html">Баланс</a>
+              <a class="dropdown-item" href="auto-coming.html">Приход</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="auto-suppliers.html">Поставщики</a>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown active">
+            <a class="nav-link dropdown-toggle" href="#" id="auto__drop2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fas fa-people-carry"></i> Услуги
+            </a>
+            <div class="dropdown-menu" aria-labelledby="auto__drop2">
+              <a class="dropdown-item active" href="services.html">Каталог услуг <span class="sr-only">(текущая)</span></a>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="auto__drop4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fas fa-cash-register"></i> Касса
+            </a>
+            <div class="dropdown-menu" aria-labelledby="auto__drop4">
+              <a class="dropdown-item" href="cashRegister-new.html">Продажа</a>
+              <a class="dropdown-item" href="cashRegister-stat.html">Статистика</a>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-md-12 col-12">
+        <h4><i class="fas fa-book"></i> Каталог услуг</h4>
+
+        <div class="auto__buttons-row">
+          <button class="btn btn-success" data-toggle="modal" data-target="#auto__services-modal"><i class="far fa-plus-square"></i> Добавить услугу</button>
+        </div>
+
+        <div class="auto__services-container">
+          <!-- Контейнер с таблицей услуг -->
+          <table class="table table-bordered auto__services-table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col" class="sorter-false filter-false">id</th>
+                <th scope="col">Наименование услуги</th>
+                <th scope="col">Цена</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><div class="ssc-line"></div></td>
+                <td><div class="ssc-line"></div></td>
+                <td><div class="ssc-line"></div></td>
+              </tr>
+              <tr>
+                <td><div class="ssc-line"></div></td>
+                <td><div class="ssc-line"></div></td>
+                <td><div class="ssc-line"></div></td>
+              </tr>
+              <tr>
+                <td><div class="ssc-line"></div></td>
+                <td><div class="ssc-line"></div></td>
+                <td><div class="ssc-line"></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Модальное окно добавления услуги -->
+  <div class="modal fade" id="auto__services-modal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="auto__services-modal-label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="auto__services-modal-label">Добавление услуги</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form class="auto__services-form">
+            <fieldset>
+              <div class="form-row">
+                <div class="form-group col-md-8 col-12">
+                  <label for="name">Наименование услуги</label>
+                  <input class="form-control" type="text" id="name" name="name" autocomplete="off">
+                </div>
+                <div class="form-group col-md-4 col-12">
+                  <label for="price">Цена услуги</label>
+                  <input class="form-control" type="text" id="price" name="price" autocomplete="off">
+                </div>
+              </div>
+              <div class="form-row">
+                <button type="submit" class="btn btn-success">Добавить услугу</button>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="dist/js/bundle.js"></script>
+</body>
+</html>

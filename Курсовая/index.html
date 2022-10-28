@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Автосалон :: Дашборд</title>
+  <link rel="stylesheet" href="dist/css/style.css">
+</head>
+<body>
+  
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="index.html"><i class="fas fa-car"></i> Автосалон</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#auto__navContent" aria-controls="auto__navContent" aria-expanded="false">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="auto__navContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html"><i class="fas fa-home"></i> Главная <span class="sr-only">(текущая)</span></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="auto__drop1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fas fa-car-side"></i> Автомобили
+            </a>
+            <div class="dropdown-menu" aria-labelledby="auto__drop1">
+              <a class="dropdown-item" href="auto-balance.html">Баланс</a>
+              <a class="dropdown-item" href="auto-coming.html">Приход</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="auto-suppliers.html">Поставщики</a>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="auto__drop2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fas fa-people-carry"></i> Услуги
+            </a>
+            <div class="dropdown-menu" aria-labelledby="auto__drop2">
+              <a class="dropdown-item" href="services.html">Каталог услуг</a>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="auto__drop4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fas fa-cash-register"></i> Касса
+            </a>
+            <div class="dropdown-menu" aria-labelledby="auto__drop4">
+              <a class="dropdown-item" href="cashRegister-new.html">Продажа</a>
+              <a class="dropdown-item" href="cashRegister-stat.html">Статистика</a>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-md-12 col-12 text-center">
+        <h1 class="mt-4 animate__animated animate__fadeInUp">База данных</h1>
+        <h3 class="animate__animated animate__fadeInUp">"Автосалон"</h3>
+        <h1 class="animate__animated animate__fadeInUp"><i class="fas fa-car"></i></h1>
+      </div>
+    </div>
+  </div>
+
+  <!-- <script src="src/libs/jQuery/js/jquery-3.6.0.min.js"></script> -->
+  <script src="dist/js/bundle.js"></script>
+</body>
+</html>

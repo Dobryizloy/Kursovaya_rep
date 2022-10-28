@@ -1,0 +1,510 @@
+FORMAT: 1A
+
+# API документация
+
+Документация к api
+
+## Group Модуль поставщиков
+Список методов для модуля поставщиков
+
+## Добавление поставщика [/suppliers/add]
+
++ Parameters
+    + name: ВАЗ (string) - Наименование поставщика
+
+### Добавление поставщика [POST]
+
+Метод выполняет добавление поставщика
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "ok": true
+            }
+
+
+## Удаление поставщика [/suppliers/remove]
+
++ Parameters
+    + id: 2 (number) - id поставщика
+
+### Удаление поставщика [POST]
+
+Метод выполняет удаление поставщика
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "ok": true
+            }
+
+
+## Получение списка постащиков [/suppliers/get]
+
++ Parameters
+    + id: 2 (number) - id поставщика
+
+### Получение списка постащиков [GET]
+
+Метод выполняет Получение списка постащиков
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "ok": true,
+                    "data": [
+                    {
+                        "id": "4",
+                        "name": "Баварский Вентиляторный"
+                    },
+                    {
+                        "id": "3",
+                        "name": "BMW Motors"
+                    },
+                    {
+                        "id": "2",
+                        "name": "ГАЗ"
+                    },
+                    {
+                        "id": "1",
+                        "name": "ВАЗ"
+                    }
+                ]
+            }
+
+
+## Отдает данные для диаграммы [/suppliers/getPie]
+
+### Отдает данные для диаграммы [GET]
+
+Метод отдает данные для диаграммы
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "ok": true,
+                "data": {
+                    "labels": [
+                        "ВАЗ",
+                        "ГАЗ",
+                        "BMW Motors",
+                        "Баварский Вентиляторный"
+                    ],
+                    "datasets": [
+                        {
+                            "label": "Авто по поставщикам",
+                            "data": [
+                                1,
+                                0,
+                                0,
+                                1
+                            ],
+                            "backgroundColor": [
+                                "rgb(75, 192, 192)",
+                                "rgba(201, 203, 207, 0.2)",
+                                "rgb(75, 192, 192)",
+                                "rgba(255, 99, 132, 0.2)"
+                            ],
+                            "hoverOffset": 4
+                        }
+                    ]
+                }
+            }
+
+
+
+
+
+## Изменение поставщика [/suppliers/edit]
+
++ Parameters
+    + id: 2 (number) - id поставщика
+    + col: name (string) - Наименование столбца
+    + value: `Новое наименование` - Новое значение
+
+### Изменение поставщика [POST]
+
+Метод изменяет поставщика
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "ok": true
+            }
+
+## Удаление поставщика [/suppliers/remove]
+
++ Parameters
+    + id: 2 (number) - id поставщика
+
+### Удаление поставщика [POST]
+
+Метод удаляет поставщика
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "ok": true
+            }
+
+
+
+
+
+
+
+## Group Услуги
+Список методов для модуля авторизации
+
+## Добавление услуги [/services/add]
+
++ Parameters
+    + name: `Замена масла` (string) - Название услуги
+    + price: 1680 (number) - Цена услуги
+
+### Добавление услуги [POST]
+
+Метод добавляет услугу
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "ok": true
+            }
+
+
+## Изменение услуги [/services/edit]
+
++ Parameters
+    + id: 2 (number) - id услуги
+    + col: name (string) - Наименование столбца
+    + value: `Новое наименование` - Новое значение
+
+### Изменение услуги [POST]
+
+Метод изменяет услугу
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "ok": true
+            }
+
+
+## Удаление услуги [/services/remove]
+
++ Parameters
+    + id: 2 (number) - id услуги
+
+### Удаление услуги [POST]
+
+Метод удаляет услугу
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "ok": true
+            }
+
+
+
+
+
+
+## Получение списка услуг [/services/get]
+
+### Получение списка услуг [GET]
+
+Метод Возвращает доступный список услуг
+
++ Response 200 (application/json)
+
+    + Body
+
+        {
+            "ok": true,
+            "data": [
+                {
+                    "id": "4",
+                    "name": "Замена топливного фильтра",
+                    "price": "2100"
+                },
+                {
+                    "id": "3",
+                    "name": "Замена фар",
+                    "price": "1300"
+                },
+                {
+                    "id": "2",
+                    "name": "Замена колодок",
+                    "price": "2000"
+                },
+                {
+                    "id": "1",
+                    "name": "Замена масла",
+                    "price": "1800"
+                }
+            ]
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+## Group Модуль авто
+Список методов для модуля авто
+
+## Добавление авто [/auto/add]
+
++ Parameters
+    + name: `Хорошее состояние` (string) - Наименование
+    + factory: 1 (number) - id завода
+    + mark: `BMW` (string) - Наименование марки
+    + model: `E38` (string) - Наименование модели
+    + mileage: 250351 (number) - Пробег авто
+    + price: 850000 (number) - Цена авто
+    + color: Чёрный (string) - Цвет авто
+    + year: 1998 (number) - Год выпуска
+
+### Добавление авто [POST]
+
+Метод добавляет авто в систему
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "ok": true
+            }
+
+
+## Получение авто [/auto/get]
+
+### Получение авто [GET]
+
+Метод возвращает данные из БД
+
++ Response 200 (application/json)
+
+    + Body
+
+        {
+            "ok": true,
+            "data": {
+                "1": {
+                    "id": "1",
+                    "name": "BMW E38 Авто ",
+                    "mark": "BMW",
+                    "model": "E38",
+                    "mileage": "250000",
+                    "price": "850000",
+                    "color": "Чёрный",
+                    "ts": "1639164136",
+                    "year": "1998",
+                    "supplier_id": "4",
+                    "supplier": {
+                        "id": "4",
+                        "name": "Баварский Вентиляторный",
+                        "ts": "1639161004"
+                    }
+                },
+                "2": {
+                    "id": "2",
+                    "name": "Ваз 2114",
+                    "mark": "Лада",
+                    "model": "2114",
+                    "mileage": "80000",
+                    "price": "450000",
+                    "color": "Белый",
+                    "ts": "1639229329",
+                    "year": "2001",
+                    "supplier_id": "1",
+                    "supplier": {
+                        "id": "1",
+                        "name": "ВАЗ",
+                        "ts": "1639159542"
+                    }
+                }
+            }
+        }
+
+
+
+## Group Ордеры
+Список методов для модуля ордеров
+
+## Создание нового ордера [/order/add]
+
++ Parameters
+    + name: `Иван` (string) - Имя клиента
+    + sname: `Иванов` (string) - Фамилия клиента
+    + pat: `Иванович` (string) - Отчество клиента
+    + `car-id`: 0 (number) - id автомобиля, 0 если не покупается авто
+    + serv: [0, 2, 3] (array, optional) - массив услуг
+
+### Создание нового ордера [POST]
+
+Метод Создает новый ордер
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "ok": true
+            }
+
+
+
+## Получение ордера [/order/get]
+
++ Parameters
+    + id: 2 (number) - id ордера
+
+### Получение ордера [GET]
+
+Метод возвращает информацию об ордере
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "ok": true,
+                "data": {
+                    "id": "3",
+                    "ts": "1639238866",
+                    "total": "851300",
+                    "client_id": "3",
+                    "sharedService": [
+                        {
+                            "id": "3",
+                            "name": "Замена фар",
+                            "price": "1300",
+                            "ts": "1639229081"
+                        }
+                    ],
+                    "sharedCar": [
+                        {
+                            "id": "1",
+                            "name": "BMW E38 Авто ",
+                            "mark": "BMW",
+                            "model": "E38",
+                            "mileage": "250000",
+                            "price": "850000",
+                            "color": "Чёрный",
+                            "ts": "1639164136",
+                            "year": "1998",
+                            "supplier_id": "4"
+                        }
+                    ],
+                    "client": {
+                        "id": "3",
+                        "name": "Дмитрий",
+                        "sname": "Дмитриев",
+                        "pat": "Дмитриевич",
+                        "ts": "1639238866"
+                    }
+                }
+            }
+
+
+
+
+## Group Клиенты
+Список методов для модуля клиентов
+
+## Поиск имён [/users/getName]
+
++ Parameters
+    + query: `Иван` (string) - Имя клиента
+
+### Поиск имён [GET]
+
+Метод возвращает массив совпадений из БД для дополнения поля формы.
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "suggestions": [
+                    {
+                        "value": "Иван",
+                        "data": "Иван"
+                    }
+                ]
+            }
+
+
+## Поиск фамилий [/users/getSname]
+
++ Parameters
+    + query: `Иванов` (string) - Фамилия клиента
+
+### Поиск фамилий [GET]
+
+Метод возвращает массив совпадений из БД для дополнения поля формы.
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "suggestions": [
+                    {
+                        "value": "Иванов",
+                        "data": "Иванов"
+                    }
+                ]
+            }
+
+
+
+## Поиск отчеств [/users/getPat]
+
++ Parameters
+    + query: `Иванович` (string) - Отчество клиента
+
+### Поиск отчеств [GET]
+
+Метод возвращает массив совпадений из БД для дополнения поля формы.
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "suggestions": [
+                    {
+                        "value": "Иванович",
+                        "data": "Иванович"
+                    }
+                ]
+            }
